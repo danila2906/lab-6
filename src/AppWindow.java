@@ -8,8 +8,13 @@ public class AppWindow extends Frame {
         addWindowListener(new MyWindowAdapter());
     }
     public static void main(String args[]) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Insets scnMax = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
+        int taskBarSize = scnMax.bottom;
+        int width = screenSize.width;
+        int height = screenSize.height - taskBarSize;
         AppWindow appwin = new AppWindow();
-        appwin.setSize(new Dimension(300, 200));
+        appwin.setSize(new Dimension(width, height));
         appwin.setTitle("An AWT-Based Application ");
         appwin.setVisible(true);
 

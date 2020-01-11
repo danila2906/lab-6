@@ -14,7 +14,7 @@ public class AppWindow extends Frame {
         int width = screenSize.width;
         int height = screenSize.height - taskBarSize;
         AppWindow appwin = new AppWindow();
-        appwin.setSize(new Dimension(width, height));
+        appwin.setSize(new Dimension(300, 200));
         appwin.setTitle("An AWT-Based Application ");
         appwin.setVisible(true);
 
@@ -30,8 +30,8 @@ public class AppWindow extends Frame {
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                int x = getRandomNumberInRange(0, 1920 - 100);
-                int y = getRandomNumberInRange(0, 1080 - 50);
+                int x = getRandomNumberInRange(0, width - 100);
+                int y = getRandomNumberInRange(0, height - 50);
                 button.setBounds(x, y, 100, 50);
             }
         });
